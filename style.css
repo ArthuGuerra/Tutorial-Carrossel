@@ -1,0 +1,85 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body {
+    width: 100vw;
+    height: 100vh;
+}
+main {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+input {
+    display: none;
+}
+.content {
+    position: absolute;
+    width: 60%;
+    height: 70%;
+    border: 1px solid black;
+    left: 20%;
+    top: 10%;
+    overflow: hidden;  /* ele esconde o conteudo que sobra do container */
+   
+}
+.slide { /* muito importante essa config, é a div da imagem */ 
+width: 20%;
+}
+
+/* agora a config de SLIDES, onde está o conteúdo.*/
+
+.slides {
+   /* 500% por que são 5 fotos, cada foto é 100% */
+   width: 500%; 
+   height: 100%;
+   display: flex;
+}
+.slide img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+}
+#bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    top: 85%;
+    
+    
+}
+#bar label {
+    width: 130px;
+    padding: 3px;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 1.3em;
+    border-radius: 7px;
+    font-variant: small-caps;
+    
+}
+#bar label:hover {
+    background-color: red;
+    color: white;
+
+} 
+
+/* agora para fazer o carrossel */
+
+#radio1:checked ~ .pri {
+    margin-left: 0;
+}#radio2:checked ~ .pri { /* colocar NEGATIVO NA MARGIM */
+    margin-left: -20%;
+}#radio3:checked ~ .pri {
+    margin-left: -40%;
+}#radio4:checked ~ .pri {
+    margin-left: -60%;
+}#radio5:checked ~ .pri {
+    margin-left: -80%;
+}
